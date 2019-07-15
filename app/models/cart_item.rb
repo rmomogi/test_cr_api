@@ -4,6 +4,10 @@ class CartItem < ApplicationRecord
 
   before_create :default_values
 
+  def total
+  	self.quantity * medicine.value.to_f
+  end
+
   private
 
   def default_values

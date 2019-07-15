@@ -21,6 +21,10 @@ class Cart < ApplicationRecord
     cart_items.find_or_create_by(medicine_id: medicine.id)
   end
 
+  def total
+    cart_items.sum(&:total)
+  end
+
   private
 
   def update_stock_from_destroy

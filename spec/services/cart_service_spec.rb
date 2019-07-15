@@ -46,6 +46,13 @@ RSpec.describe CartService do
     end
   end
 
+  describe '#total' do
+    it 'should return amount' do
+      subject.add_item(medicine, 5)
+      expect(subject.total).to eq medicine.value * 5
+    end
+  end
+
   describe '#destroy' do
     before { subject.destroy }
 

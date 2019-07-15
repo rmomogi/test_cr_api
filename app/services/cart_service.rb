@@ -16,6 +16,10 @@ class CartService
     @cart.remove_cart_item(medicine, quantity)
   end
 
+  def total
+    @cart.total
+  end
+
   def destroy
     @cart.destroy!
   end
